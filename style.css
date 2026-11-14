@@ -1,0 +1,236 @@
+/* 1. Basic Reset: Browser ki default extra jagah (margin/padding) hatane ke liye */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 2. Body: Poore page ko dark karna aur humare card ko bilkul beech (Center) mein lana */
+body {
+    background-color: #0f172a; /* Gehra neela-kala (Dark Slate) */
+    color: #f8fafc;            /* Safed text */
+    display: flex;
+    justify-content: center;   /* Left-Right se center */
+    align-items: center;       /* Upar-Neeche se center */
+    min-height: 100vh;         /* Poori screen ki height */
+    padding: 20px;
+}
+
+/* 3. Main Card (Container) ka design */
+.container {
+    background-color: #1e293b;
+    width: 100%;
+    max-width: 480px;          /* PC par zyada se zyada 480px chauda hoga, phone par 100% */
+    padding: 28px;
+    border-radius: 16px;       /* Kinare gol (Rounded corners) */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Card ke peeche gahri parछाई (Shadow) */
+    border: 1px solid #334155;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 6px;
+    color: #38bdf8; /* Glowing Sky Blue */
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #94a3b8;
+    margin-bottom: 20px;
+}
+
+/* 4. Text likhne wala Box (Textarea) */
+textarea {
+    width: 100%;
+    height: 130px;
+    background-color: #0f172a;
+    color: #ffffff;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 15px;
+    resize: none; /* User box ko kheench kar teda-medha na kar sake */
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+/* Jab user likhne ke liye click kare toh border neela chamke */
+textarea:focus {
+    border-color: #38bdf8;
+}
+
+.char-count {
+    text-align: right;
+    font-size: 12px;
+    color: #94a3b8;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+/* 5. Language Dropdown */
+.controls {
+    margin-bottom: 20px;
+}
+
+.controls label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #cbd5e1;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    background-color: #0f172a;
+    color: #ffffff;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* 6. Buttons ka Design */
+button {
+    width: 100%;
+    padding: 13px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.1s, opacity 0.2s;
+}
+
+/* Button dabane par halka sa chhota hone ka effect */
+button:active {
+    transform: scale(0.98);
+}
+
+#generate-btn {
+    background: linear-gradient(135deg, #3b82f6, #2563eb); /* Neela Gradient */
+    color: white;
+}
+
+#generate-btn:hover {
+    opacity: 0.9;
+}
+
+/* 7. Result Box (Audio Player aur Download Button) */
+#result-box {
+    margin-top: 22px;
+    padding-top: 20px;
+    border-top: 1px solid #334155;
+}
+
+/* ZARoori CLASS: Iska use JavaScript karega box ko chhupane aur dikhane ke liye */
+.hidden {
+    display: none;
+}
+
+#audio-player {
+    width: 100%;
+    margin-bottom: 14px;
+    border-radius: 8px;
+}
+
+#download-btn {
+    background: linear-gradient(135deg, #10b981, #059669); /* Hara (Green) Gradient */
+    color: white;
+}
+
+
+
+/* Mode Switcher Tabs */
+.mode-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px;
+    background-color: #0f172a;
+    color: #94a3b8;
+    border: 1px solid #334155;
+    font-size: 14px;
+}
+
+.tab-btn.active {
+    background-color: #38bdf8;
+    color: #0f172a;
+    border-color: #38bdf8;
+}
+
+/* Emotion Helper Buttons & Counter Row */
+.text-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+.tag-group {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.tag-btn {
+    width: auto;
+    padding: 5px 10px;
+    font-size: 12px;
+    background-color: #334155;
+    color: #e2e8f0;
+    border-radius: 6px;
+}
+
+.tag-btn:hover {
+    background-color: #475569;
+}
+
+/* Emotion Sliders Box */
+.sliders-box {
+    background-color: #0f172a;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #334155;
+    margin-bottom: 20px;
+}
+
+.slider-group {
+    margin-bottom: 12px;
+}
+
+.slider-group:last-child {
+    margin-bottom: 0;
+}
+
+.slider-group label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #e2e8f0;
+    margin-bottom: 4px;
+}
+
+.slider-group input[type="range"] {
+    width: 100%;
+    accent-color: #38bdf8;
+    cursor: pointer;
+}
+
+.slider-group small {
+    display: block;
+    font-size: 11px;
+    color: #64748b;
+    margin-top: 2px;
+}

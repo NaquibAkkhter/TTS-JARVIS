@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Voice & SFX Studio - Real Emotions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🎙️ AI Emotion & SFX Studio</h1>
+        <p class="subtitle">Real Human Voices, Emotions & Cinematic Sound Effects</p>
+
+        <!-- 1. Mode Switcher (Voice vs Sound Effect) -->
+        <div class="mode-tabs">
+            <button id="tab-voice" class="tab-btn active">🗣️ Human Voice</button>
+            <button id="tab-sfx" class="tab-btn">💥 Sound Effects</button>
+        </div>
+
+        <!-- 2. Text Input Area -->
+        <textarea id="text-input" placeholder="Yahan Hindi ya English mein dialogue likhein... (Jaise: Aaj main bahut khush hoon! ... Kya sach mein?)" maxlength="1000"></textarea>
+        
+        <div class="text-footer">
+            <!-- Quick Emotion Helper Buttons -->
+            <div id="emotion-tags" class="tag-group">
+                <button type="button" class="tag-btn" data-insert=" ... ">😮‍💨 Pause/Breath (...)</button>
+                <button type="button" class="tag-btn" data-insert=" Haha! ">😄 Laugh</button>
+                <button type="button" class="tag-btn" data-insert=" Ahh... ">😔 Sigh/Sad</button>
+                <button type="button" class="tag-btn" data-insert="! ">🔥 Excited (!)</button>
+            </div>
+            <div class="char-count"><span id="count">0</span> / 1000</div>
+        </div>
+
+        <!-- 3. Voice Controls (Sirf Voice Mode mein dikhega) -->
+        <div id="voice-controls">
+            <div class="controls">
+                <label for="voice-select">Select Real Human Voice:</label>
+                <select id="voice-select">
+                    <option value="pNInz6obpgDQGcFmaJgB">🧔‍♂️ Adam (Deep Storyteller - Hindi/Eng)</option>
+                    <option value="nPczCjzI2devNBz1zQrb">👨 Brian (Cinematic & Emotional - Hindi/Eng)</option>
+                    <option value="EXAVITQu4vr4xnSDxMaL">👩 Sarah (Soft & Expressive Female - Hindi/Eng)</option>
+                    <option value="21m00Tcm4TlvDq8ikWAM">👩‍💼 Rachel (Calm & Natural Female - Hindi/Eng)</option>
+                    <option value="JBFqnCBsd6RMkjVDRZzb">🎙️ George (Warm Narrator - Hindi/Eng)</option>
+                </select>
+            </div>
+
+            <!-- Emotion Sliders -->
+            <div class="sliders-box">
+                <div class="slider-group">
+                    <label>
+                        <span>🎭 Emotion & Expressiveness:</span>
+                        <span id="emotion-val">70%</span>
+                    </label>
+                    <input type="range" id="emotion-slider" min="0" max="100" value="70">
+                    <small>Zyada % = Zyada utaar-chadhav, saans aur real feel</small>
+                </div>-
+
+                <div class="slider-group">
+                    <label>
+                        <span>🔥 Drama / Style Boost:</span>
+                        <span id="style-val">45%</span>
+                    </label>
+                    <input type="range" id="style-slider" min="0" max="100" value="45">
+                    <small>Zyada % = Zyada dramatic acting andaaz</small>
+                </div>
+                <!-- 3. Voice Controls (Sirf Voice Mode mein dikhega) -->
+        <div id="voice-controls">
+            <div class="controls">
+                <label for="voice-select">Select Default Character / Voice:</label>
+                <select id="voice-select">
+                    <option value="pNInz6obpgDQGcFmaJgB">🧔‍♂️ Adam (Deep Storyteller)</option>
+                    <option value="nPczCjzI2devNBz1zQrb">👨 Brian (Cinematic & Emotional)</option>
+                    <option value="EXAVITQu4vr4xnSDxMaL">👩 Sarah (Soft & Expressive Female)</option>
+                </select>
+            </div>
+
+            <!-- Naya Feature: Custom Character Voice ID dalne ka box -->
+            <div class="controls" style="margin-top: 14px;">
+                <label for="custom-voice-id">Ya Kisi Bhi Character ki Custom Voice ID Dalein:</label>
+                <input type="text" id="custom-voice-id" placeholder="Yahan Voice ID paste karein (Jaise: ErXwobaYiN019PkySvjV)..." style="width: 100%; padding: 12px; background-color: #0f172a; color: #ffffff; border: 1px solid #334155; border-radius: 10px; font-size: 14px; outline: none;">
+                <small style="display: block; font-size: 11px; color: #94a3b8; margin-top: 4px;">Agar yahan ID likhenge, toh upar wala dropdown ignore ho jayega.</small>
+            </div>
+        </div>
+    </div>
+    </div>
+
+        <!-- 4. Generate Button -->
+        <button id="generate-btn">🔊 Generate Real Audio</button>
+
+        <!-- 5. Result Area -->
+        <div id="result-box" class="hidden">
+            <audio id="audio-player" controls></audio>
+            <button id="download-btn">📥 Download MP3</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
